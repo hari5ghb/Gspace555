@@ -90,12 +90,13 @@ decrease_btn.onclick = function(){
 }
 function order()
 {
+    var phno="8680001397";
   var total=quantity*cost;
   var message= "your order "+ "item: "+item+" cost: "+cost+" quantity "+quantity+" total: "+total;
 var whatsmessage = encodeURIComponent(message);
 
 
-var whatsappLink = "https://wa.me/" + "?text=" + whatsmessage;
+var whatsappLink = "https://wa.me/" +phno+ "?text=" + whatsmessage;
 
 // Redirect to WhatsApp
 window.location.href = whatsappLink;
