@@ -7,23 +7,28 @@
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <video controls autoplay muted >
-      <source src="img/ad.mp4">
-
-    </video>
+    <section width="1000px" height="800px">
+      <video controls autoplay muted width="100%">
+        <source src="img/ad.mp4">
+  
+      </video>
+    </section>
+    
    <h1 style="font-size: 65px;padding: 0;">
     Pizza
   </h1>
   <center>
     <img align="middle" src="img/pizza.jpg" class="center" style=" height: 450px; padding: 45px; border-radius: 85px;">
-    <button onclick=document.location='https://wa.me/+918680001397?text=hi%20hi' style="width: 450px; height: 50px; background-color: rgb(201, 47, 47); color: aliceblue; border-radius: 45px; ">
+    <button   onclick= order() style="width: 450px; height: 50px; background-color: rgb(201, 47, 47); color: aliceblue; border-radius: 45px; ">
       Order Now
     </button>
 
     <label id="countlabel">0</label>
     <button id="decreasebtn" class="countB">-</button>&nbsp;
-    <button id="increasebtn" class="CountB">+</button>
+    <button id="increasebtn" class="countB">+</button>
   </center>
+
+  
   <style>
     body{
       height:auto !important;
@@ -56,6 +61,7 @@ color:aliceblue
 
   </style>
   <script>
+    
     const decrease_btn  = document.getElementById("decreasebtn");
 const increase_btn  = document.getElementById("increasebtn");
 
@@ -65,7 +71,13 @@ let count = 0;
 increase_btn.onclick = function(){
 
     count++;
+   
     count_label.textContent = count;
+    quantity++;
+  
+
+  
+  
 }
 
 decrease_btn.onclick = function(){
@@ -76,8 +88,26 @@ decrease_btn.onclick = function(){
     }
     count_label.textContent = count;
 }
+function order()
+{
+  var total=quantity*cost;
+  var message= "your order "+ "item: "+item+" cost: "+cost+" quantity "+quantity+" total: "+total;
+var whatsmessage = encodeURIComponent(message);
 
+
+var whatsappLink = "https://wa.me/" + "?text=" + whatsmessage;
+
+// Redirect to WhatsApp
+window.location.href = whatsappLink;
+}
+
+const cost=115;
+  var quantity=0;
+  var item="pizza";
+  var total=0;
 
   </script>
+  
+  
 </body>
 </html>
