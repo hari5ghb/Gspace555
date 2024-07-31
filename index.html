@@ -34,6 +34,10 @@ $(document).ready(function validateOTP(){
      var whatsmessage = encodeURIComponent(message);
      var whatsappLink = "https://wa.me/" + phno + "?text=" + whatsmessage;
      window.location.href = whatsappLink;
+        var to = ("#otpInput").val();
+         if( to == otp){
+        alert("otp verified successfully");
+     }
 
 });
 
