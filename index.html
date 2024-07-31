@@ -18,27 +18,28 @@
            <p id="otp">send otp</p>  <p id="resendotp">resendotp</p>
 
         </form>
-        <h1>Enter otp</h1>
-        <input type="number" id="otpInput" placeholder="Enter OTP">
+       
        
     </div>
     <script>
 $(document).ready(function validateOTP(){
 
+    $("#otp").mouseover(function(){
 
+        $("#otp").css('cursor', 'pointer');
+    });
     $("#otp").click(function(){
     var phno=$("#phnoInput").val();
     var otp=Math.floor(1000 + Math.random() * 9000);
-     $("#otp").text("your otp is "+otp);
+    
      var message= "your otp is "+otp;
      var whatsmessage = encodeURIComponent(message);
      var whatsappLink = "https://wa.me/" + phno + "?text=" + whatsmessage;
      window.location.href = whatsappLink;
-        var to = ("#otpInput").val();
-         if( to == otp){
-        alert("otp verified successfully");
-     }
+    
 
+   
+   
 });
 
 
